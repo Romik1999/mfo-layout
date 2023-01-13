@@ -780,6 +780,8 @@ main {
   .range__handler {
     width: 48px;
     height: 32px;
+    right: -24px;
+    top: calc(50% - 16px);
   }
 }
 
