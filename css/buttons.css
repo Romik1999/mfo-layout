@@ -1,29 +1,42 @@
 .sbtn {
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
   cursor: pointer;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px 14px;
   height: 60px;
   font-size: 20px;
   border-radius: 20px;
 }
+
+.sbtn--red {
+  border: 1px solid #CA0026;
+  background-color: #CA0026;
+  color: #ffffff;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sbtn--red:hover {
+  background-color: transparent;
+  color: #CA0026;
+}
+
 @media screen and (max-width: 576px) {
   .sbtn {
     height: 55px;
     font-size: 18px;
   }
-}
-.sbtn--red {
-  border: 1px solid #CA0026;
-  background-color: #CA0026;
-  color: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.sbtn--red:hover {
-  background-color: transparent;
-  color: #CA0026;
 }

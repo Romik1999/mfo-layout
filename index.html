@@ -85,15 +85,15 @@
                         <div class="calc-form__range">
                             <div class="range">
                                 <span class="range__fill">
-                                    <span class="range__handler"></span>
+                                     <span class="range__handler"></span>
                                 </span>
-                                <input class="range__input" type="range" name="amount" min="1000" max="100000" value="10000" step="1000">
+                                <input class="range__input" type="range" step="1000" min="1000" max="100000"
+                                       value="10000">
                             </div>
                         </div>
                         <div class="calc-form__bottom">
                             <div class="calc-form__field">
-                                <input class="calc-form__input amount-show" type="tel" placeholder="Введите сумму"
-                                       value="10000">
+                                <input class="calc-form__input form__input--range" type="text" value="10 000">
                             </div>
                             <div class="calc-form__field">
                                 <input class="calc-form__input" type="tel" placeholder="Ваш телефон"
@@ -152,7 +152,7 @@
                 </div>
             </div>
         </div>
-        <div class="steps__button sbtn sbtn--red" data-fancybox data-src="#popup_order">Получить деньги</div>
+        <button data-modal="main" class="steps__button sbtn sbtn--red">Получить деньги</button>
     </div>
 </section>
     <section class="how">
@@ -235,7 +235,7 @@
                 <div class="order-max__subtitle section-subtitle">
                     Для быстрого оформления, нажмите кнопку <b>“Оформить сейчас”</b>
                 </div>
-                <div class="order-max__button sbtn sbtn--red" data-fancybox="" data-src="#popup_order">Оформить сейчас</div>
+                <div data-modal="main" class="order-max__button sbtn sbtn--red" data-fancybox="" data-src="#popup_order">Оформить сейчас</div>
             </div>
             <div class="order-max__image">
                 <img src="img/order-max.png">
@@ -645,7 +645,7 @@
                     <path d="M0.2929 8.70711C-0.0976257 8.31658 -0.0976257 7.68342 0.2929 7.29289L6.65686 0.928932C7.04739 0.538408 7.68055 0.538408 8.07108 0.928932C8.4616 1.31946 8.4616 1.95262 8.07108 2.34315L2.41422 8L8.07108 13.6569C8.4616 14.0474 8.4616 14.6805 8.07108 15.0711C7.68055 15.4616 7.04739 15.4616 6.65686 15.0711L0.2929 8.70711ZM118 9H1.00001V7H118V9Z" fill="#CA0026"/>
                 </svg>
             </div>
-            <div class="reviews__button sbtn sbtn--red" data-fancybox="" data-src="#popup_review">Оставить отзыв</div>
+            <div class="reviews__button sbtn sbtn--red" data-modal="reviews">Оставить отзыв</div>
             <div class="reviews__arrow reviews__arrow--next">
                 <svg width="118" height="16" viewBox="0 0 118 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M117.707 8.70711C118.098 8.31658 118.098 7.68342 117.707 7.29289L111.343 0.928932C110.953 0.538408 110.319 0.538408 109.929 0.928932C109.538 1.31946 109.538 1.95262 109.929 2.34315L115.586 8L109.929 13.6569C109.538 14.0474 109.538 14.6805 109.929 15.0711C110.319 15.4616 110.953 15.4616 111.343 15.0711L117.707 8.70711ZM0 9H117V7H0V9Z" fill="#CA0026"/>
@@ -659,7 +659,7 @@
         <div class="order-min__wrapper">
             <div class="order-min__info">
                 <div class="order-min__title section-title">Вступайте в ряды довольных клиентов!</div>
-                <div class="order-min__button sbtn sbtn--red" data-fancybox="" data-src="#popup_order">Получить деньги</div>
+                <div data-modal="main" class="order-min__button sbtn sbtn--red">Получить деньги</div>
             </div>
             <div class="order-min__image">
                 <img src="img/order-min.png">
@@ -712,80 +712,78 @@
         </div>
     </div>
 </footer>
-<div class="popup" id="popup_order">
-    <div class="popup__close">
-        Закрыть
-    </div>
-    <div class="popup__wrapper">
-        <div class="popup__title">
+<div class="modal modal-main">
+    <div class="modal__wrapper">
+        <div class="modal__close modal-main__close">
+            Закрыть
+        </div>
+        <div class="modal__title">
             Оставьте заявку
         </div>
-        <div class="popup__subtitle">
+        <div class="modal__subtitle">
             Для получения заявок, оставьте номер телефона и ваше имя.
             Наш менеджер расскажет вам все подробнее.
         </div>
-        <div class="popup__form">
-            <form class="calc-form">
-                <div class="calc-form__field">
-                    <input class="calc-form__input" type="text" placeholder="Как вас зовут?">
+        <div class="modal__form">
+            <form class="modal-form">
+                <div class="modal-form__field">
+                    <input class="modal-form__input" type="text" placeholder="Как вас зовут?">
                 </div>
-                <div class="calc-form__field">
-                    <input class="calc-form__input" type="tel" placeholder="Ваш телефон" onkeypress="maskPhone(event)"
+                <div class="modal-form__field">
+                    <input class="modal-form__input" type="tel" placeholder="Ваш телефон" onkeypress="maskPhone(event)"
                            onpaste="onPastePhone(event)">
                 </div>
-                <button class="calc-form__button sbtn sbtn--red" type="submit">Получить деньги</button>
+                <button class="modal-form__button sbtn sbtn--red" type="submit">Получить деньги</button>
             </form>
         </div>
     </div>
 </div>
 
-
-<div class="popup" id="popup_review">
-    <div class="popup__close">
-        Закрыть
-    </div>
-    <div class="popup__wrapper">
-        <div class="popup__title">
+<div class="modal modal-reviews">
+    <div class="modal__wrapper">
+        <div class="modal__close modal-reviews__close">
+            Закрыть
+        </div>
+        <div class="modal__title">
             Оставьте отзыв
         </div>
-        <div class="popup__form">
-            <form class="calc-form">
-                <div class="calc-form__inner">
-                    <div class="calc-form__left">
-                        <input class="calc-form__foto" type="file" placeholder="Ваше фото">
+        <div class="modal__form">
+            <form class="modal-form">
+                <div class="modal-form__inner">
+                    <div class="modal-form__left">
+                        <input class="modal-form__foto" type="file" placeholder="Ваше фото">
                         <p>Добавить фото</p>
                     </div>
-                    <div class="calc-form__right">
-                        <div class="calc-form__field">
-                            <input class="calc-form__input" type="text" placeholder="Как вас зовут?">
+                    <div class="modal-form__right">
+                        <div class="modal-form__field">
+                            <input class="modal-form__input" type="text" placeholder="Как вас зовут?">
                         </div>
-                        <div class="calc-form__field">
-                            <textarea class="calc-form__textarea" name="message"
+                        <div class="modal-form__field">
+                            <textarea class="modal-form__textarea" name="message"
                                       placeholder="Ваш комментарий"></textarea>
                         </div>
                     </div>
                 </div>
-                <button class="calc-form__button sbtn sbtn--red" type="submit">Оставить отзыв</button>
+                <button class="modal-form__button sbtn sbtn--red" type="submit">Оставить отзыв</button>
             </form>
         </div>
     </div>
 </div>
 
-<div class="popup" id="popup_success">
-    <div class="popup__close">
-        Закрыть
-    </div>
-    <div class="popup__wrapper">
-        <div class="popup__title">
+<div class="modal modal-success">
+    <div class="modal__wrapper">
+        <div class="modal__close modal-success__close">
+            Закрыть
+        </div>
+        <div class="modal__title">
             Заявка отправлена
         </div>
-        <div class="popup__subtitle">
+        <div class="modal__subtitle">
             Мы получили вашу заявку.
             Наш менеджер свяжится с вами.
         </div>
     </div>
 </div>
-
 
 <script src="libs/swiper/swiper-bundle.min.js"></script>
 <script src="js/app.min.js"></script>
